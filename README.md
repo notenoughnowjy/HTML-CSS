@@ -947,3 +947,80 @@ index.html의 웹 페이지 입니다.
     11. `input type="time"`
     12. `input type="url"`
     13. `input type="week"`
+    
+    ```html
+<input type="number" min="10" max="15"><br>
+            <input type="date" name="datev"><br>
+            <input type="month" name="monthv"><br>
+            <input type="week" name="weekv"><br>
+            <input type="time" name="timev" id="<br>">
+            <input type="email" name="emailv" id=""><br>
+            <input type="search" name="searchv" id=""><br>
+            <input type="tel" name="telv" id=""><br>
+            <input type="url" name="urlv" id=""><br>
+            <input type="range" name="rangev" id="" min="0" max="10"><br>
+            <input type="submit">
+```
+
+![image](https://user-images.githubusercontent.com/96164365/220605750-3bfa67d7-a55b-4864-ab03-8f54be3fca5a.png)
+
+
+### HTML5 입력폼의 새로운 속성들
+
+- `autocomplete="on"` : 아래의 텍스트 및 패스워드의 양식들이 활성화되어진다.
+- `autocomplete="off"` : 아래의 텍스트 및 패스워드의 양식들이 비활성화되어진다.
+- `placeholder="text"` : android studio의 hint
+- `autofocus` : 입력란의 포커스를 맞출 수 있다.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+     <body>
+        <form action="login.php" autocomplete="on">
+            <input type="text" name="id" id="" placeholder="id를 입력해주세요." autofocus><br>
+            <input type="password" name="password" id="" autocomplete="off" placeholder="비밀번호를 입력해주세요."> 
+            <input type="submit" name="submit" id="">
+        </form>
+     </body>
+</html>
+```
+
+### HTML5 입력 값 체크
+
+- 일종의 유효성 체크라고 할 수 있다.
+
+![image](https://user-images.githubusercontent.com/96164365/220605804-3fe484ac-17cc-4d75-a2ef-ca0eef26447b.png)
+
+
+- `required` : 반드시 입력을 해야한다. → 유효성 검사와 관련
+
+![image](https://user-images.githubusercontent.com/96164365/220605848-bbf9ee89-0cb1-4332-8faf-918714cada41.png)
+
+
+- `pattern="[a-zA-Z]...` : 요청사항을 정할 수 있다. **.
+ → 어떠한 문자든 넣을 수 있다.
+.+ → 어떤 문자이던 하나 더 와야한다.
+[0-9] : 숫자가 와야한다.
+⇒ 정규 표현식**
+
+![image](https://user-images.githubusercontent.com/96164365/220605896-980287f0-001b-436f-abfe-356461a06874.png)
+
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form action="register.php">
+            <input type="text" name="id" id="" placeholder="아이디를 입력해주세요." required pattern="[a-zA-Z].+[0-9]"><br>
+            <input type="email" name="email" id="" placeholder="이메일 입력">
+            <input type="submit" name="" id="">
+        </form>
+    </body>
+</html>
+```
