@@ -2,6 +2,9 @@
 
 ### HTML이란 무엇인가?
 
+***learn from https://github.com/gymcoding/learn-html-css***
+***source by https://github.com/gymcoding/learn-html-css***
+
 - HTML 이란? : Hyper Text Markup Language 약자이며, 태그를 이용한 Markup 언어이다.
 - HTML Tag : 특징, 구조
 - HTML 문서 기본구조 : `doctype`, `html`, `head`, `body`
