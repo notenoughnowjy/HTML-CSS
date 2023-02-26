@@ -495,8 +495,265 @@ h1~h6, p, hr, br, i, em, b, strong
 ol, ul, li, dl, dt, dd
 - 표 태그
 table, tr, th, td
-# 꿀팁 : 멀티셀렉터 기능
+---
 
+### Semantic
+
+- 이점
+    - 검색엔진 최적화
+    - 웹 접근성 향상
+    - 가독성 향상
+
+### HTML Sementic Elements
+
+- `<header>` : 페이지에 대한 정보를 담는 태그로, 페이지 상단에 위치함
+- `<nav>` : 다른 페이지나 같은 페이지 안에 다른 부분으로 이어주는 네비게이션 링크로 구성된 섹션을 표현함
+- `<aside>` : 페이지 전체 내용과는 어느정도 관련성이 있지만, 주요 내용과는 직접적인 연관성은 없는 분리된 내용을 담고 있음
+- `<main>` : 문서의 body 요소의 주 콘텐츠 (main contents)를 정의할 때 사용함
+- `<article>` : article은 여러가지 아이템들을 묶어 재사용 가능하게 그룹화함
+- `<footer>` : 주로 저작관 정보나 서비스 제공자 정보등을 나타내며 사이트 하단에 위치함
+- `<details>` : 추가적인 정보를 나타내거나 사용자가 요청하는 정보를 나타냄
+- `<figcaption>` : 부모요소인 figure 요소의 내용들에 대한 캡션, 혹은 제목을 나타냄
+- `<figure>` : 일러스트, 다이어그램, 사진, 코드등에 주석을 다는 용도로 사용
+- `<mark>` : 하나의 문서 내에서 다른 문맥과의 관련성을 나타내기 위해서 참조 목적으로 마킹되거나 하이라이트된 텍스트를 표현
+- `<time>` : 24시간에서의 시간 혹은 [그레고리력](https://ko.wikipedia.org/wiki/%EA%B7%B8%EB%A0%88%EA%B3%A0%EB%A6%AC%EB%A0%A5)에서의 정밀한 날짜를 나타냄
+
+- Non-Semantic
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non Semantic</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      .header {
+        border: 2px solid red;
+        line-height: 55px;
+        height: 55px;
+      }
+      .nav {
+        border: 2px solid blue;
+        height: 110px;
+      }
+      .main {
+        border: 2px solid green;
+        height: 300px;
+        line-height: 300px;
+      }
+      .footer {
+        border: 2px solid black;
+        height: 55px;
+        line-height: 55px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Header 영역</div>
+    <div class="nav">
+      <ul>
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+      </ul>
+    </div>
+    <div class="main">Content 영역</div>
+    <div class="footer">Footer 영역</div>
+  </body>
+</html>
+```
+
+- Semantic
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic</title>
+    <style>
+      * {
+        text-align: center;
+      }
+      header {
+        border: 2px solid red;
+        line-height: 55px;
+        height: 55px;
+      }
+      nav {
+        border: 2px solid blue;
+        height: 110px;
+      }
+      main {
+        border: 2px solid green;
+        height: 300px;
+        line-height: 300px;
+      }
+      footer {
+        border: 2px solid black;
+        height: 55px;
+        line-height: 55px;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header 영역</header>
+    <nav>
+      <ul>
+        <li>Menu1</li>
+        <li>Menu2</li>
+        <li>Menu3</li>
+        <li>Menu4</li>
+      </ul>
+    </nav>
+    <main>Content 영역</main>
+    <footer>Footer 영역</footer>
+  </body>
+</html>
+```
+
+- 적극적으로 사용해야함
+
+
+---
+
+### Inline Level Element / Block Level Element
+
+- `<div>`와<`span>`
+    - `<div>` - 컨테이너 역할
+    display : block
+    - `<span>` - 특정 아이템
+    display : inline
+        - display 요소에 따라 나뉘어진다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline Block 1</title>
+    <style>
+      div {
+        background-color: beige;
+      }
+      span {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화
+      삼천리 화려 강산 대한사람 대한으로 길이 보전하세 남산 위에 저 소나무
+      철갑을 두른듯 바람서리 불변함은 우리 기상일세 무궁화 삼천리 화려 강산
+      대한사람 대한으로 길이 보전하세 가을 하늘 공활한데 높고 구름 없이 밝은
+      달은 우리 가슴 일편단심일세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이
+      보전하세 이 기상과 이 마음으로 충성을 다하여 괴로우나 즐거우나
+      나라사랑하세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이 보전하세 접기
+    </div>
+
+    <span>
+      동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화
+      삼천리 화려 강산 대한사람 대한으로 길이 보전하세 남산 위에 저 소나무
+      철갑을 두른듯 바람서리 불변함은 우리 기상일세 무궁화 삼천리 화려 강산
+      대한사람 대한으로 길이 보전하세 가을 하늘 공활한데 높고 구름 없이 밝은
+      달은 우리 가슴 일편단심일세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이
+      보전하세 이 기상과 이 마음으로 충성을 다하여 괴로우나 즐거우나
+      나라사랑하세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이 보전하세 접기
+    </span>
+
+    <hr />
+
+    <div>Hello</div>
+    <span> Hello </span>
+  </body>
+</html>
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3329e4bc-6b32-4a3a-b977-e10987bcf36b/Untitled.png)
+
+### Block Elemnet
+
+블록 레벨 요소는 부모 요소의 전체 공간을 차지하여 “블록을” 만든다. <h1>~<h6><ol><ul><li><p> 태그 등이 블록 요소에 속한다.
+
+- 화면 구성이나 레이아웃을 짤 때는 블록 레벨 요소를 사용합니다.
+- 블록 레벨 요소는 한칸을 모두 차지하기 때문에 세로로 나열 됩니다.
+- width, height, margin 소성이 적용됨
+
+### Inline Element
+
+인라인 레벨 요소는 콘텐츠의 흐름을 끊지 않고(줄바꿈X), 요소를 구성하는 태그에 할당된 공간만 차지합니다.
+<a><em><img><span> 태그 등이 인라인 요소에 속한다.
+
+- 인라인 레벨 요소는 콘텐츠 영역 만큼 차지하기 때문에 가로로 나열됩니다.
+- amrgin-top, margin-bottom 적용되지 않습니다. 대신에 line-height 이용
+- width, height 속성이 적용되지 않습니다.
+- 태그가 콘텐츠의 할당 된 공간만 갖고 있기 때문에 text-align과 같은 속성은 사용할 수 없습니다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline Block Element</title>
+    <style>
+      div {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      span {
+        background-color: blue;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <span>3</span><span>3</span><span>3</span>
+  </body>
+</html>
+```
+
+
+
+### 학습정리
+
+- div, span
+div, span 둘 다 영역태그이다.
+div는 영역을 분할 하며, 컨테이너의 역할도 한다.
+span은 영역태그이며, 특정 아이템을 꾸밀 때 사용한다.
+- block vs inline
+div는 block leven element 이다. (전체공간, 세로배치, width&height 적용 O)
+span은 inline level element 이다. (콘텐츠만큼, 가로배치, width&height 적용X)
+
+---
+# 꿀팁 : 멀티셀렉터 기능
+      
 ## Windows → Ctrl + Alt
 
 ## Mac → cmd + option
