@@ -688,8 +688,6 @@ table, tr, th, td
 </html>
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3329e4bc-6b32-4a3a-b977-e10987bcf36b/Untitled.png)
-
 ### Block Elemnet
 
 블록 레벨 요소는 부모 요소의 전체 공간을 차지하여 “블록을” 만든다. <h1>~<h6><ol><ul><li><p> 태그 등이 블록 요소에 속한다.
