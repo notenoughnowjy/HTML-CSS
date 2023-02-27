@@ -490,11 +490,11 @@ ex) `<col span=”3”>` → 세 개의 열을 그룹으로 묶음
 ### 학습 정리
 
 - 글꼴 태그
-h1~h6, p, hr, br, i, em, b, strong
+`h1~h6`, `p`, `hr`, `br`, `i`, `em`, `b`, `strong`
 - 목록 태그
-ol, ul, li, dl, dt, dd
+`ol`, `ul`, `li`, `dl`, `dt`, `dd`
 - 표 태그
-table, tr, th, td
+`table`, `tr`, `th`, `td`
 ---
 
 ### Semantic
