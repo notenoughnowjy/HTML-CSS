@@ -699,12 +699,12 @@ ex) `<col span=”3”>` → 세 개의 열을 그룹으로 묶음
 ### `Inline Element`
 
 인라인 레벨 요소는 콘텐츠의 흐름을 끊지 않고(줄바꿈X), 요소를 구성하는 태그에 할당된 공간만 차지합니다.
-<a><em><img><span> 태그 등이 인라인 요소에 속한다.
+`<a>``<em>``<img>``<span>` 태그 등이 인라인 요소에 속한다.
 
 - 인라인 레벨 요소는 콘텐츠 영역 만큼 차지하기 때문에 가로로 나열됩니다.
-- amrgin-top, margin-bottom 적용되지 않습니다. 대신에 line-height 이용
-- width, height 속성이 적용되지 않습니다.
-- 태그가 콘텐츠의 할당 된 공간만 갖고 있기 때문에 text-align과 같은 속성은 사용할 수 없습니다.
+- `amrgin-top`, `margin-bottom` 적용되지 않습니다. 대신에 `line-height` 이용
+- `width`, `height` 속성이 적용되지 않습니다.
+- 태그가 콘텐츠의 할당 된 공간만 갖고 있기 때문에 `text-align`과 같은 속성은 사용할 수 없습니다.
 
 ```html
 <!DOCTYPE html>
