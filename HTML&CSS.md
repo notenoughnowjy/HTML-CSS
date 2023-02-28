@@ -370,7 +370,302 @@ ex) `<col span=”3”>` → 세 개의 열을 그룹으로 묶음
       <tr>
         <td>홍길동</td>
         <td>도술</td>
-        <td>축지법</td>
+        <td>축지법</td>- .
+- .
+- .
+- .
+
+---
+
+## 2023.02.28
+
+### 폼 태그
+
+`<form>` 요소는 정보를 제출하기 위하여 어디서부터 어디까지가 양식인지 지정하는 역할을 함
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form tag</title>
+</head>
+
+<body>
+    <form action="/singup" method="post">
+        <div class="form-example">
+            <label for="name">이름 :</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="for-example">
+            <label for="email">이메일 :</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="for-example">
+            <input type="submit" value="제출하기">
+        </div>
+    </form>
+</body>
+
+</html>
+```
+
+### 속성
+
+- `action` - 양식 데이터를 처리할 서버 프로그램의 URL
+- `method` - 양식을 제출할 때 사용할 HTTP 메서드
+    - `post` - 양식 데이터를 요청 본문으로 전송합니다.
+    - `get` - 양식 데이터를 URL의 쿼리스트링으로 붙여서 전송
+
+### Input 태그
+
+`<input>` 요소로 데이터를 입력 받을 수 있습니다. `type` 속성을 통하여 다양한 방법으로 데이터를 받을 수 있습니다.
+
+### text
+
+`<input>` 태그의 기본값으로 한줄의 텍스트를 입력 받습니다.
+
+```html
+<input type="text" id="name">
+```
+
+HTML5 에서는 text 필드가 데이터 용도에 맞게 사용할 수 있도록 다양한 타입이 추가되었습니다.
+
+- `email` - email 데이터를 받기위해 사용됩니다. (이메일 유효성 검증)
+- `tel` - 전화번호를 받기위해 사용됩니다. (모바일 접근시 키패드가 다름)
+- 더 많은 `type` 은 MDN 사이트에서 참고헤주세요.
+
+### label
+
+`<label>` 레이블 태근느 입력받는 필드를 설명할 때 사용합니다. `웹접근성 준수` 
+
+사용 방법은 <label> 태그 하위에 <input> 태그를 위치시킬 수 있고 `id` 와 `for` 속성을 사용하여 `<input>` 태그와 연결지을 수 있습니다.
+
+```html
+<!-- label 태그 하위에 놓는 법 -->
+<label>
+	<input type="text" id="name">
+</label>
+
+<!-- for와 id속성을 사용하여 label 태그와 연결지음 -->
+<label for="name">이름 : </label>
+<input type="text" id="name">
+```
+
+### checkbox
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>개인정보</legend>
+            <input type="text">
+            <input type="text">
+        </fieldset>
+
+        <fieldset>
+            <legend>사업자정보</legend>
+            <input type="text">
+            <input type="text">
+        </fieldset>
+    </form>
+</body>
+
+</html>
+```
+
+---
+
+### Form 데이터 태그 속성
+
+- `required` 
+입력값이 필수라는 것을 명시할 수 있습니다.
+- `readonly`
+필드를 읽기전용으로 필드로 만들 수 있습니다.
+- `disabled`
+비활성화 시킬 수 있으며 해당 필드는 서버로 전송되지 않습니다.
+- `autofocus`
+초기에 해달 필드에 커서를 위치 시킬 수 있습니다.
+- `placeholder`
+입력 필드가 비어있을 때 해당 입력값의 설명 또는 가이드 문구를 삽입할 수 있습니다.
+
+### checkbox
+
+여러개의 체크박스 항목 중 2개 이상 선택할 수 있습니다. 그리고 체크박스 선택시 선택된 체크박스의 `value` 값이 서버로 전송됩니다.
+
+```html
+<ul>
+        <li>
+          <label for="apple">사과</label>
+          <input type="checkbox" name="" id="apple" value="apple" />
+        </li>
+        <li>
+          <label for="orange">오렌지</label>
+          <input type="checkbox" name="" id="orange" value="orange" />
+        </li>
+        <li>
+          <label for="banana">바나나</label>
+          <input type="checkbox" name="" id="banana" value="banana" />
+        </li>
+      </ul>
+
+```
+
+### radio
+
+여러개의 라디오 항목 중 1개를 선택할 수 있습니다. 그리고 라디오 항목 선택시 선택된 항목의 `value` 값이 서버로 전송됩니다.
+
+여러개 중 하나를 선택하게 하려면 그 여러 항목의 `<radio name=””>` `name` 속성 값을 같은 값으로 그룹핑 해줘야 합니다.
+
+```html
+<ul>
+        <li>
+          <label for="strawberry">딸기</label>
+          <input
+            type="strawberry"
+            name="fruit"
+            id="strawberry"
+            value="strawberry"
+          />
+        </li>
+        <li>
+          <label for="grape">포도</label>
+          <input type="grape" name="fruit" id="grape" value="grape" />
+        </li>
+        <li>
+          <label for="peach">복숭아</label>
+          <input type="peach" name="fruit" id="peach" value="peach" />
+        </li>
+      </ul>
+```
+
+## HTML Form 다루기 2
+
+`<input>` 태그에서 주로 한줄 데이터를 `type` 에 의해 다양한 방 입력 받아습니다.
+
+`<form>` 양식을 전송할 때는 `<input>` 태그 말고 다양한 요소를 사용할 수 있습니다.
+
+Textarea
+
+Select
+
+detalist
+
+Button
+
+type
+
+### Textarea
+
+---
+
+`<Textarea>` 는 여러줄의 데이터를 입력받을 수 있습니다.
+
+```html
+<textarea id="story" name="story" rows="5" cols="33">
+It was a dark and stromy night...
+</textarea>
+```
+
+속성
+
+- rows - 화면에 표시되는 행수를 지정합니다
+- cols - 화면에 표시되는 컬럼 수를 지정합니다.
+
+### Select
+
+---
+
+`<select>` 태그는 옵션 메뉴를 제공합니다. `<option>` 태그로 각 항목을 나타내면 `<select>` 태그는 `<option>` 태그를 감싸줍니다.
+
+```html
+<fieldset>
+      <legend>주문 상품을 선택해주세요</legend>
+      <ul>
+        <li>
+          <select name="goods" id="goods" multiple>
+            <option value="apple_10kg">사과10kg</option>
+            <option value="apple_20kg" selected>사과20kg</option>
+            <option value="apple_30kg">사과30kg</option>
+            <option value="apple_40kg">사과40kg</option>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+```
+
+### datalist
+
+다른 컨트롤에서 고를 수 있는 가능한, 혹은 추천하는 선택지를 나타내는 `<option>` 요소 여럿을 담습니다.
+
+```html
+<li>
+        <label for="ice-cream-choice">맛을 선택하세요</label>
+        <input
+          list="ice-cream-flavors"
+          name="ice-cream-choice"
+          id="ice-cream-choice"
+        />
+        <datalist id="ice-cream-flavors">
+          <option value="Chocolate"></option>
+          <option value="Coconut"></option>
+          <option value="Mint"></option>
+          <option value="Strawberry"></option>
+          <option value="Vanilla"></option>
+        </datalist>
+      </li>
+```
+
+### Button
+
+`<button>` 요소는 클릭 가능한 버튼을 나타냅니다. `<form>` 내부는 물론이고 버튼기능이 필요한 곳 이라면 어디에나 배치할 수 있습니다.
+
+```html
+<button type="button">
+추가하기
+</button>
+```
+
+### `type`
+
+버튼의 행동 방식을 선언합니다.
+
+- `submit` : 버튼이 서버로 양식 데이터를 제출합니다. (기본값)
+- `reset` : `<input type=”reset”>` 처럼, 모든 입력 필드를 초기값으로 되돌립니다.
+- `button` : 기본 행동이 없으며 주로 클릭 한 후 자바스크립트 측 코드를 명령할 때 사용합니다.
+
+```html
+<button>제출하기</button>
+      <button type="submit">제출하기</button>
+      <button type="reset">리셋하기</button>
+      <button type="button" onclick="alert('Hello World~!')">버튼</button>
+<!-- 자바 스크립트 등을 추가로 설정하거나 할때 사용 -->
+
+```
+
+### 학습정리
+
+- Form
+양식을 정의하는 구획
+- input
+데이터를 입력받는 태그이며 다양한 타입들이 존재
+ex) number, date, email, password, checkbox, radio
+- textarea, select, datalist, button
+
+---
       </tr>
       <tr>
         <td>짐코딩</td>
@@ -875,7 +1170,7 @@ http 프로토콜로 시작해서 전체 경로를 입력함
 
 - 이미지 <img>
 src, alt
-- 저랟경로 vs 상대경로
+- 절대경로 vs 상대경로
 절대 : http~, /~
 상대 : ./ ../
 - 오디오 <audio>
@@ -897,13 +1192,297 @@ HTML에서 Form은 웹에서 사용자의 정보를 입력받기 위해 사용
 즉, 폼(Form)은 사용자의 정보를 입력받을 수 있게 만들어 놓은 형식
 
 - 폼태그
-    - 속성
 
 
 ---
-# 꿀팁 : 멀티셀렉터 기능
-      
-## Windows → Ctrl + Alt
 
-## Mac → cmd + option
+## 2023.02.28
 
+### 폼 태그
+
+`<form>` 요소는 정보를 제출하기 위하여 어디서부터 어디까지가 양식인지 지정하는 역할을 함
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form tag</title>
+</head>
+
+<body>
+    <form action="/singup" method="post">
+        <div class="form-example">
+            <label for="name">이름 :</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="for-example">
+            <label for="email">이메일 :</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="for-example">
+            <input type="submit" value="제출하기">
+        </div>
+    </form>
+</body>
+
+</html>
+```
+
+### 속성
+
+- `action` - 양식 데이터를 처리할 서버 프로그램의 URL
+- `method` - 양식을 제출할 때 사용할 HTTP 메서드
+    - `post` - 양식 데이터를 요청 본문으로 전송합니다.
+    - `get` - 양식 데이터를 URL의 쿼리스트링으로 붙여서 전송
+
+### Input 태그
+
+`<input>` 요소로 데이터를 입력 받을 수 있습니다. `type` 속성을 통하여 다양한 방법으로 데이터를 받을 수 있습니다.
+
+### text
+
+`<input>` 태그의 기본값으로 한줄의 텍스트를 입력 받습니다.
+
+```html
+<input type="text" id="name">
+```
+
+HTML5 에서는 text 필드가 데이터 용도에 맞게 사용할 수 있도록 다양한 타입이 추가되었습니다.
+
+- `email` - email 데이터를 받기위해 사용됩니다. (이메일 유효성 검증)
+- `tel` - 전화번호를 받기위해 사용됩니다. (모바일 접근시 키패드가 다름)
+- 더 많은 `type` 은 MDN 사이트에서 참고헤주세요.
+
+### label
+
+`<label>` 레이블 태근느 입력받는 필드를 설명할 때 사용합니다. `웹접근성 준수` 
+
+사용 방법은 <label> 태그 하위에 <input> 태그를 위치시킬 수 있고 `id` 와 `for` 속성을 사용하여 `<input>` 태그와 연결지을 수 있습니다.
+
+```html
+<!-- label 태그 하위에 놓는 법 -->
+<label>
+	<input type="text" id="name">
+</label>
+
+<!-- for와 id속성을 사용하여 label 태그와 연결지음 -->
+<label for="name">이름 : </label>
+<input type="text" id="name">
+```
+
+### checkbox
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>개인정보</legend>
+            <input type="text">
+            <input type="text">
+        </fieldset>
+
+        <fieldset>
+            <legend>사업자정보</legend>
+            <input type="text">
+            <input type="text">
+        </fieldset>
+    </form>
+</body>
+
+</html>
+```
+
+---
+
+### Form 데이터 태그 속성
+
+- `required` 
+입력값이 필수라는 것을 명시할 수 있습니다.
+- `readonly`
+필드를 읽기전용으로 필드로 만들 수 있습니다.
+- `disabled`
+비활성화 시킬 수 있으며 해당 필드는 서버로 전송되지 않습니다.
+- `autofocus`
+초기에 해달 필드에 커서를 위치 시킬 수 있습니다.
+- `placeholder`
+입력 필드가 비어있을 때 해당 입력값의 설명 또는 가이드 문구를 삽입할 수 있습니다.
+
+### checkbox
+
+여러개의 체크박스 항목 중 2개 이상 선택할 수 있습니다. 그리고 체크박스 선택시 선택된 체크박스의 `value` 값이 서버로 전송됩니다.
+
+```html
+<ul>
+        <li>
+          <label for="apple">사과</label>
+          <input type="checkbox" name="" id="apple" value="apple" />
+        </li>
+        <li>
+          <label for="orange">오렌지</label>
+          <input type="checkbox" name="" id="orange" value="orange" />
+        </li>
+        <li>
+          <label for="banana">바나나</label>
+          <input type="checkbox" name="" id="banana" value="banana" />
+        </li>
+      </ul>
+
+```
+
+### radio
+
+여러개의 라디오 항목 중 1개를 선택할 수 있습니다. 그리고 라디오 항목 선택시 선택된 항목의 `value` 값이 서버로 전송됩니다.
+
+여러개 중 하나를 선택하게 하려면 그 여러 항목의 `<radio name=””>` `name` 속성 값을 같은 값으로 그룹핑 해줘야 합니다.
+
+```html
+<ul>
+        <li>
+          <label for="strawberry">딸기</label>
+          <input
+            type="strawberry"
+            name="fruit"
+            id="strawberry"
+            value="strawberry"
+          />
+        </li>
+        <li>
+          <label for="grape">포도</label>
+          <input type="grape" name="fruit" id="grape" value="grape" />
+        </li>
+        <li>
+          <label for="peach">복숭아</label>
+          <input type="peach" name="fruit" id="peach" value="peach" />
+        </li>
+      </ul>
+```
+
+## HTML Form 다루기 2
+
+`<input>` 태그에서 주로 한줄 데이터를 `type` 에 의해 다양한 방 입력 받아습니다.
+
+`<form>` 양식을 전송할 때는 `<input>` 태그 말고 다양한 요소를 사용할 수 있습니다.
+
+Textarea
+
+Select
+
+detalist
+
+Button
+
+type
+
+### Textarea
+
+---
+
+`<Textarea>` 는 여러줄의 데이터를 입력받을 수 있습니다.
+
+```html
+<textarea id="story" name="story" rows="5" cols="33">
+It was a dark and stromy night...
+</textarea>
+```
+
+속성
+
+- rows - 화면에 표시되는 행수를 지정합니다
+- cols - 화면에 표시되는 컬럼 수를 지정합니다.
+
+### Select
+
+---
+
+`<select>` 태그는 옵션 메뉴를 제공합니다. `<option>` 태그로 각 항목을 나타내면 `<select>` 태그는 `<option>` 태그를 감싸줍니다.
+
+```html
+<fieldset>
+      <legend>주문 상품을 선택해주세요</legend>
+      <ul>
+        <li>
+          <select name="goods" id="goods" multiple>
+            <option value="apple_10kg">사과10kg</option>
+            <option value="apple_20kg" selected>사과20kg</option>
+            <option value="apple_30kg">사과30kg</option>
+            <option value="apple_40kg">사과40kg</option>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+```
+
+### datalist
+
+다른 컨트롤에서 고를 수 있는 가능한, 혹은 추천하는 선택지를 나타내는 `<option>` 요소 여럿을 담습니다.
+
+```html
+<li>
+        <label for="ice-cream-choice">맛을 선택하세요</label>
+        <input
+          list="ice-cream-flavors"
+          name="ice-cream-choice"
+          id="ice-cream-choice"
+        />
+        <datalist id="ice-cream-flavors">
+          <option value="Chocolate"></option>
+          <option value="Coconut"></option>
+          <option value="Mint"></option>
+          <option value="Strawberry"></option>
+          <option value="Vanilla"></option>
+        </datalist>
+      </li>
+```
+
+### Button
+
+`<button>` 요소는 클릭 가능한 버튼을 나타냅니다. `<form>` 내부는 물론이고 버튼기능이 필요한 곳 이라면 어디에나 배치할 수 있습니다.
+
+```html
+<button type="button">
+추가하기
+</button>
+```
+
+### `type`
+
+버튼의 행동 방식을 선언합니다.
+
+- `submit` : 버튼이 서버로 양식 데이터를 제출합니다. (기본값)
+- `reset` : `<input type=”reset”>` 처럼, 모든 입력 필드를 초기값으로 되돌립니다.
+- `button` : 기본 행동이 없으며 주로 클릭 한 후 자바스크립트 측 코드를 명령할 때 사용합니다.
+
+```html
+<button>제출하기</button>
+      <button type="submit">제출하기</button>
+      <button type="reset">리셋하기</button>
+      <button type="button" onclick="alert('Hello World~!')">버튼</button>
+<!-- 자바 스크립트 등을 추가로 설정하거나 할때 사용 -->
+
+```
+
+### 학습정리
+
+- Form
+양식을 정의하는 구획
+- input
+데이터를 입력받는 태그이며 다양한 타입들이 존재
+ex) number, date, email, password, checkbox, radio
+- textarea, select, datalist, button
+
+---
+            
