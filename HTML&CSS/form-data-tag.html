@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Input Tag</legend>
+        <ul>
+          <li>
+            <label for="email">이메일</label>
+            <input
+              type="email"
+              id="email"
+              required
+              value="zjadudn88"
+              readonly
+            />
+          </li>
+          <li>
+            <label for="tel">전화번호</label>
+            <input
+              type="tel"
+              id="tel"
+              required
+              value="010-0000-0000"
+              disabled
+            />
+          </li>
+          <li>
+            <label for="color">color</label>
+            <input type="color" id="color" required />
+          </li>
+          <li>
+            <label for="url">url</label>
+            <input
+              type="url"
+              id="url"
+              required
+              placeholder="url을 입력해 주세요"
+            />
+          </li>
+          <li>
+            <label for="number">number</label>
+            <input type="number" id="number" required min="5" max="10" />
+          </li>
+          <li>
+            <label for="range">range</label>
+            <input type="range" id="range" required />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>날짜 관련</legend>
+        <ul>
+          <li>
+            <label for="date">date</label>
+            <input type="date" id="date" min="2021-07-10" max="2021-07-15" />
+          </li>
+          <li>
+            <label for="month">month</label>
+            <input type="month" id="month" />
+          </li>
+          <li>
+            <label for="week">week</label>
+            <input type="week" id="week" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>시간 관련</legend>
+        <ul>
+          <li>
+            <label for="time">time</label>
+            <input type="time" id="time" min="16:00" max="18:00" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>그 외</legend>
+        <ul>
+          <li>
+            <input type="file" />
+          </li>
+          <li>
+            <input type="hidden" />
+          </li>
+        </ul>
+      </fieldset>
+      <input type="submit" value="제출하기" />
+
+      <ul>
+        <li>
+          <label for="apple">사과</label>
+          <input type="checkbox" name="" id="apple" value="apple" />
+        </li>
+        <li>
+          <label for="orange">오렌지</label>
+          <input type="checkbox" name="" id="orange" value="orange" />
+        </li>
+        <li>
+          <label for="banana">바나나</label>
+          <input type="checkbox" name="" id="banana" value="banana" />
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <label for="strawberry">딸기</label>
+          <input
+            type="strawberry"
+            name="fruit"
+            id="strawberry"
+            value="strawberry"
+          />
+        </li>
+        <li>
+          <label for="grape">포도</label>
+          <input type="grape" name="fruit" id="grape" value="grape" />
+        </li>
+        <li>
+          <label for="peach">복숭아</label>
+          <input type="peach" name="fruit" id="peach" value="peach" />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
