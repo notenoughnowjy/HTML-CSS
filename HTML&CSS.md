@@ -1485,4 +1485,66 @@ ex) number, date, email, password, checkbox, radio
 - textarea, select, datalist, button
 
 ---
-            
+## 2023.03.01
+
+### Head
+
+### head 안에 배치할 수 있는 요소
+
+- `<title>`
+브라우저의 제목 표시줄이나 페이지 탭에 보이는 문서 제목을 정의합니다. 텍스트만 포함할 수 있으며 태그를 포함하더라도 무시함
+
+```html
+<title>NAVER</title>
+```
+
+- `<base>`
+문서 안의 모든 상대 URL이 사용할 기준 URL을 지정합니다. **문서에는 하나의 `<base>` 요소만 존재**할 수 있습니다.
+
+```html
+<base href="/assets/images/" />
+```
+
+- `<link>` 
+요소는 현재 문서와 외부 리소스의 관계를 명시합니다. <link>는 스타일 시트를 연결할 때 제일 많이 사용하지만, 사이트 아이콘(”파비콘”과 홈 화면 아이콘>. 연결 등 여러가지로 쓰일 수 있습니다.
+
+```html
+<!--파비콘 설정-->
+<link rel="shortcut icon" href="./favicon.ico" />
+
+<!-- Style 시트 연결 -->
+<link href="/style.css" rel="stylesheet">
+```
+
+- `<style>`
+스타일 규칙을 담고 있습니다.
+
+```html
+<style>
+.tile {
+	color: blue;
+}
+</style>
+```
+
+- `<meta>
+<base>` `<link>` `<script>` `<style>` `<title>` 과 같은 다른 메타관련 요소로 나타낼 수 없는 메타데이터를 나타냅니다.
+
+```html
+<meta property="og:image" content="https://example.com/image.jpg">
+```
+
+- `<script>` 
+데이터나 자바스크립터 코드를 웹 문서에 포함할 때 사용합니다.
+
+```html
+<script src="javascriopt"></script>
+```
+
+---
+
+## 오픈그래프 Open Graph
+
+---
+
+콘텐츠의 요약내용이 SNS에 게시되는데 최적화된 데이터를 가지고 갈 수 있도록 설정하는 것            
