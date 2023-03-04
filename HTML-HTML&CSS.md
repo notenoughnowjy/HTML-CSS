@@ -162,29 +162,34 @@ ex) A는 B이다.와 같은 Key = value로 사용할 때 유용하다.
   </body>
 </html>
 ```
+---
+
 ## 2023.02.26
 
+
 ### `Table 태그`
+
 
 - `<table>`태그 - 표
 - `<th>`태그 - 이름
 - `<tr>`태그 - 행
 - `<td>`태그 - 열
 
-### Table 기본 태그
+
+### `Table` 기본 태그
 
 - `<table>`
 표를 만드는 태그로써, 표 전체를 감싸는 데 사용
 - `<caption>`
 표의 제목이나 설명을 작성하는 태그
 - `<tr>`
-표의 행을 의미하는 태그, 자식으로 <th>태그나 <td>태그가 반드시 있어야 한다
+표의 행을 의미하는 태그, 자식으로 `<th>`태그나 `<td>`태그가 반드시 있어야 한다
 - `<tr>`
-표의 제목 열을 의맣는 태그, 부모 태그인 <tr>태그 안에 있어야 한다.
+표의 제목 열을 의맣는 태그, 부모 태그인 `<tr>`태그 안에 있어야 한다.
 - `<td>`
-표의 일반 열을 의미하는 태그, 부모인 <tr>태그안에 있어야 한다.
+표의 일반 열을 의미하는 태그, 부모인 `<tr>`태그안에 있어야 한다.
 
-### Table 그룹 관련 태그
+### `Table` 그룹 관련 태그
 
 - `<colorgroup>`
 열을 그룹으로 묶을 수 있도록 해주는 태그이다.
@@ -202,10 +207,10 @@ ex) `<col span=”3”>` → 세 개의 열을 그룹으로 묶음
 ### Table 태그 관련 속성
 
 - `<table>` 태그 속성
-- border - 테이블이 갖고 있는 테이블과 셀 모두 선을 표시한다. `웹표준X`
-- width - 테이블의 가로너비를 설정한다.`웹표준X`
-- cellpadding - 셀의 안쪽 여백으로써, 셀과 콘텐츠와의 간격을 조절함.`웹표준X`
-- cellspacing - 셀의 바깥쪽 여백으로써, 셀과 셀간의 간격을 조절함.`웹표준X`
+- `border` - 테이블이 갖고 있는 테이블과 셀 모두 선을 표시한다. `웹표준X`
+- `width` - 테이블의 가로너비를 설정한다.`웹표준X`
+- `cellpadding` - 셀의 안쪽 여백으로써, 셀과 콘텐츠와의 간격을 조절함.`웹표준X`
+- `cellspacing` - 셀의 바깥쪽 여백으로써, 셀과 셀간의 간격을 조절함.`웹표준X`
 
 위 속성들은 XHTML 1.0에서는 웹 표준이지만 오늘날 HTML5에서는 웹 표준이 아닙니다. → CSS로 대체해야 함.
 
@@ -1169,14 +1174,14 @@ http 프로토콜로 시작해서 전체 경로를 입력함
 ### 학습정리
 
 - 이미지 <img>
-src, alt
+`src`, `alt`
 - 절대경로 vs 상대경로
 절대 : http~, /~
 상대 : ./ ../
-- 오디오 <audio>
-- 비디오 <video>
-- 하이퍼링크 <a>
-- href, target=”_blank”
+- 오디오 `<audio>`
+- 비디오 `<video>`
+- 하이퍼링크 `<a>`
+- `href`, `target=”_blank”`
 ### Form
 
 - Form
@@ -1477,12 +1482,12 @@ It was a dark and stromy night...
 
 ### 학습정리
 
-- Form
+- `Form`
 양식을 정의하는 구획
-- input
+- `input`
 데이터를 입력받는 태그이며 다양한 타입들이 존재
-ex) number, date, email, password, checkbox, radio
-- textarea, select, datalist, button
+ex) `number`, `date`, `email`, `password`, `checkbox`, `radio`
+- `textarea`, `select`, `datalist`, `button`
 
 ---
 ## 2023.03.01
@@ -1543,8 +1548,15 @@ ex) number, date, email, password, checkbox, radio
 
 ---
 
-## 오픈그래프 Open Graph
+## 오픈그래프 `Open Graph`
 
 ---
 
-콘텐츠의 요약내용이 SNS에 게시되는데 최적화된 데이터를 가지고 갈 수 있도록 설정하는 것            
+콘텐츠의 요약내용이 SNS에 게시되는데 최적화된 데이터를 가지고 갈 수 있도록 설정하는 것
+---
+	      
+## 2023.03.04
+
+### 휴식의 날
+
+오늘은 휴식
