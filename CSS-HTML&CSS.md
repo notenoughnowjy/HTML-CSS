@@ -525,3 +525,119 @@ height: 200px;
 
 - `padding` - `padding` 값을 조절하여 안쪽 여백을 지정할 수 있습니다.
 - `padding-{direction}` - `padding-top` `padding-left` `padding-right` `padding-bottom` 속성을 사용하여 각각 지정할 수도 있습니다.
+### 안쪽 여백 Padding
+
+- `padding` 속성은 HTML 요소의 안쪽 여백을 지정합니다.
+- `padding-top` `padding-bottom` `padding-left` `padding-right` 속성을 사용하여 각각 지정할 수도 있습니다.
+- 예시
+
+```css
+padding: 20px;
+padding: 10px 20px;
+padding: 4px 2px 2px 4px;
+padding-top: 20px;
+```
+
+### 바깥 여백 Margin
+
+- `margin` 속성은 HTML 요소의 바깥 여백을 지정합니다.
+- `margin-top` `margin-bottom` `margin-left` `margin-right` 속성을 사용하여 각각 지정할 수도 있습니다.
+- 예시
+
+```css
+margin: 20px;
+margin: 10px 20px;
+margin: 4px 2px 2px 4px;
+margin-top: 20px;
+```
+
+### 마진 중첩
+
+HTML 요소를 세로로 배치할 경우 `margin` 과 `margin` 이 만날 때 `margin` 값이 큰 쪽으로 겹쳐지는 것, 요소를 가로로 배치할 경우에는 상관없지만 세로로 배치할 경우에는 값이 큰 `margin` 만 적용 된다.
+
+### 테두리 Border
+
+CSS `border` `border-width` `border-style` `border-color` 속성으로 요소의 테두리를 설정
+
+- `border-style`
+    - 어떤 형태의 테두리 스타일을 지정할지 나타냅니다.
+    - 4개 방향을 값을 한꺼번에 지정할 때는 방향 순서를 지켜야 합니다. top → right → bottom → left
+    - 테두리 스타일 종류 MDN
+    - 예시
+    
+    ```css
+    border-style: solid;
+    border-style: dotted solid dashed solid;
+    border-left-style: solid;
+    ```
+    
+- `border-width`
+    - 테두리 두께를 지정합니다.
+    - 값으로 `<크기>` 또는 키워드 `thin` `medium` `thick` 가 올 수 있습니다.
+    - 예시
+    
+    ```css
+    border-width: 1px;
+    border-width: thin thin;
+    border-width: thin thin thin; /* 이 경우는 잘 사용 안함 */
+    border-width: 8px 4px 4px 8px;
+    border-left-width: 2px;
+    ```
+    
+- `border-color`
+    - 테두리 색상을 지정합니다
+    - 예시
+    
+    ```css
+    border-color: blue;
+    border-color: yellow red;
+    ```
+    
+- `border`
+    - 단축 속성으로서 다음의 하위 속성을 포함합니다. `border-width` `border-style` `border-color`
+    - 즉, 테두리 두께, 스타일, 색상을 한꺼번에 표기할 수 있습니다.
+    - `border-top` `border-right` `border-left` `border-bottom` 을 사용하여 스타일을 각각 지정할 수 있습니다.
+    - 예시
+    
+    ```css
+    border: 1px solid red;
+    border: 4px dashed green;
+    ```
+    
+- border-radius
+    - 테두리 꼭짓점을 둥글게 만듭니다.
+    - 예시
+    
+    ```css
+    border-radius: 30px;
+    border-radius 10% 20%;
+    ```
+    
+
+### Box Sizing
+
+Box Sizing 속성은 HTML 요소의 너비와 높이를 계산하는 방법을 지정
+
+CSS 박스 모델에서 지정한 너비(width)와 높이(height)는 HTML 요소의 Content 크기에 적용됩니다. 요소에 테두리(Border)나 안쪽 여백(Padding)이 있으면 너비와 높이에 더해서 화면에 그립니다. 따라서 크기를 설정할 때 원하는 크기를 얻으려면 테두리나 안쪽 여백을 고려해야 합니다.
+
+이때 `box-sizing` 속성을 사용해 이 방식을 변경할 수 있습니다.
+
+- `box-sizing` 값
+    - `content-box` - 기본 CSS 박스 크기 결정법 입니다. 요소의 너비를 100px로 설정하면 콘텐츠 영역이 100px 너비를 가지고, 테두리와 안쪽 여백은 이에 더해집니다.
+    - `border-box` - 테두리와 안쪽 여백도 요소의 크기(width, height)로 고려합니다. 너비를 100px로 설정하고 테두리와 안쪽 여백을 추가하면, 콘텐츠 영역이 줄어들어 총 너비 100px을 유지합니다. 대부분의 경우 이 편이 크기를 조절할 때 쉽습니다.
+    
+    ```css
+    box-sizing: content-box;
+    box-sizing: border-box;
+    ```
+    
+
+### 학습정리
+
+- Box Model
+- Content - width, height
+- Padding - padding-방향 또는 padding
+- Margin - margin-방향 또는 margin, 마진중첩
+- Border
+border-방향, ㅠorder, border-color, border-radius, border-style, border-width
+- Box Sizing
