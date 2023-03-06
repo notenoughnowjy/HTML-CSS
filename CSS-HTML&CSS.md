@@ -474,3 +474,54 @@ font-family, font-size, font-style, font-weight, font-vaiant
 - 색상
 16진수, RGB
 - 그 외 글꼴 관련 속성
+---
+
+## 2023.03.06
+
+### Box Model
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4f676170-cf42-471e-bc82-7f68b3877fa1/Untitled.png)
+
+모든 HTML 요소는 웹 페이지에서 일정 공간을 차지하게 됩니다. 그리고 이러한 공간을 CSS에서는 박스 모델(Box Model)로 정의하고 있습니다
+
+HTML 요소의 박스 모델은 Content, Padding, Border, Margin으로 구성되어 있습니다.
+
+마진(margin)
+
+테두리(border)
+
+패딩(padding)
+
+콘텐츠(content)
+
+- `content` - 텍스트나 이미지가 들어있는 HTML 요소의 실질적인 내용
+- `Padding` - Content와 Border 사이의 영역으로 쉽게 말해 안쪽 여백
+- `Border` - Content를 감싸는 테두리
+- `Margin` - 테두리와 이웃하는 요소 사이의 간격으로 쉽게 말해 바깥쪽 여백
+
+모든 HTML요소의 박스모델은 이렇게 구성되어 있으며, 웹 브라우저 > 개발자도구 > Computed 탭에서 박스모델을 확인할 수 있습니다.
+
+### Box Model CSS 속성
+
+박스 모델은 속서을 지정하지 않으면 브라우저가 선언한 기본값으로 셋팅되며, 우리는 CSS 속성으로 박스모델 값을 변경할 수 있습니다. 여기에서는 간단히만 알아보고 밑에서 더 자세히 알아보자.
+
+### Content
+
+- `width` - Content 영역은 `width` 값을 이용하여 가로 너비를 지정할 수 있다.
+- `height` - Content 영역은 `height` 값을 이용하여 세로 너비를 지정할 수 있다.
+
+```css
+width: 200px;
+height: 200px;
+```
+
+```css
+💡인라인 레벨 요소(Inline Level Element)에는 width, height가 적용되지 않습니다. 왜냐하면 인라인 요소는 콘텐츠 만큼의 영역을 갖기 때문 입니다.(displayL inlie)
+만약 인라인 요소에 width, height를 변경하고 싶다면 display: inline-block으로 변경해야 합니다.
+- inline-block - block과 inline의 중간 형태로 요소는 inline인에 내부는 block처럼 표시함
+```
+
+### Padding
+
+- `padding` - `padding` 값을 조절하여 안쪽 여백을 지정할 수 있습니다.
+- `padding-{direction}` - `padding-top` `padding-left` `padding-right` `padding-bottom` 속성을 사용하여 각각 지정할 수도 있습니다.
