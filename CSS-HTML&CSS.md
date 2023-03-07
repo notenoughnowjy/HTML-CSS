@@ -641,3 +641,43 @@ CSS 박스 모델에서 지정한 너비(width)와 높이(height)는 HTML 요소
 - Border
 border-방향, ㅠorder, border-color, border-radius, border-style, border-width
 - Box Sizing
+---
+
+## 2023.03.07
+
+### Display속성
+
+`display` 속성은 HTML 요소를 어떻게 표시할지를 결정합니다
+HTML 요소마다 기본적으로 갖고 있는 display 속성 값이 다름
+
+이 기본값이 `display: block` 이면 Block Level Element 이며, `display: inline` 일 경우 Inline Level Element 입니다.
+
+그리고 display 속성은 주로 4가지 속성 값이 쓰입니다.
+
+### 기본 4가지 값
+
+### `none`
+
+요소를 보이지 않게 설정합니다. visibility 속성을 hidden으로 설정한 것과 달리, 영역도 차지하지 않습니다.
+
+### `block`
+
+기본적으로 가로 영역을 모두 채우며, block 요소 다음에 등장하는 태그는 줄바꿈이 된 것처럼 보입니다. 문서에서 문단을 표시할 때 주로 사용합니다.
+
+`width`, `height` 속성을 지정할 수 있습니다.
+
+`div` `p` `h1~h6` 태그 등이 이에 해당됩니다.
+
+### `Inline`
+
+컨텐츠만큼 영역을 차지합니다.
+
+block과 달리 줄 바꿈이 되지 않고, `width`와 `height`를 지정할 수 없습니다.
+
+word 같은 문서에서 볼드, 이탤릭, 색상, 밑줄 등 글자나 문장에 효과를 주기 위해 존재하는 단위라고 할 수 있습니다.
+
+### `Inline-block`
+
+block과 inline의 중간 형태로 요소는 inline인데 내부는 block처럼 표시함
+
+inline처럼 컨텐츠 만큼 영역을 차지하여 가로로 배치되지만 block처럼 내부 속성인 width, height등과 같은 값을 변경할 수 있습니다.
