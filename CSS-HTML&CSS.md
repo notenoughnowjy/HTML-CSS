@@ -713,3 +713,7 @@ clear는 취소하다 라는 뜻으로 `float: left;` 혹은 `float: right;` 값
 `clear: right` - 오른쪽을 취소
 
 `clear: both` - 왼쪽 오른쪽 둘 다 취소
+```css
+float 속성으로 과거에는 레이아웃을 적용
+최근에는 CSS flex box를 활용
+```
