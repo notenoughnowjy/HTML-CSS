@@ -681,3 +681,35 @@ word 같은 문서에서 볼드, 이탤릭, 색상, 밑줄 등 글자나 문장�
 block과 inline의 중간 형태로 요소는 inline인데 내부는 block처럼 표시함
 
 inline처럼 컨텐츠 만큼 영역을 차지하여 가로로 배치되지만 block처럼 내부 속성인 width, height등과 같은 값을 변경할 수 있습니다.
+---
+## 2023.03.08
+
+### Float “뜨다”
+
+### Float 속성
+
+`float` 의 사전적인 의미는 ‘뜨다’라는 뜻
+
+만약 HTML 요소에 float이 적용되면 HTML 요소는 원래의 흐름에서 벗어나 둥둥 떠다니듯 배치가 됩낟,
+
+그리하여 인접한 텍스트 또는 인라인 요소가 그 주위를 자연스럽게 감싸게 합니다.
+
+자주 사용하는 `float` 속성 값은
+
+- `none` - 기본적으로 요소를 띄우지 않음
+- `left` - 왼쪽에 띄움
+- `right` - 오른쪽에 띄움
+- `inherit` - 부모 요소로부터 상속함
+- `initial` - 기본적으로 설정함
+
+### Clear 속성
+
+clear는 취소하다 라는 뜻으로 `float: left;` 혹은 `float: right;` 값을 취소합니다.
+
+`clear: none;` - 기본값
+
+`clear: left;` - 왼쪽을 취소
+
+`clear: right` - 오른쪽을 취소
+
+`clear: both` - 왼쪽 오른쪽 둘 다 취소
