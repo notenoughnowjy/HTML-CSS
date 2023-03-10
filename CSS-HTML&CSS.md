@@ -717,3 +717,43 @@ clear는 취소하다 라는 뜻으로 `float: left;` 혹은 `float: right;` 값
 float 속성으로 과거에는 레이아웃을 적용
 최근에는 CSS flex box를 활용
 ```
+---
+
+## 2023.03.10
+
+### Position
+
+### position 속성
+
+`position` 속성은 HTML 요소를 배치하는 방법을 지정합니다.
+
+- `static` (기본값)
+static은 요소가 HTML 문서에서 일반적인 흐름을 따라 배치가 되게하며, 기본값
+- `relative` (상대적인)
+`static` 과 마찬가지로 요소가 문서의 일반적인 흐름에 따라 배치되게 합니다. static과 차이점은 요소가 자신의 `static` 위치에서 `top` `right` `bottom` `left` 와 같은 속성에 의한 상대적인 위치에 배치된다는 점입니다.
+- `absolute` 
+`absolute` 는 요소가 문서의 일반적인 흐름을 따르지 않음. `absolute` 는 position: static 속성을 가지고 있지 않은 부모를 기준으로 움직입니다. 만약 부모중에 포지션이 relative, absolute, fixed인 태그가 없다면 가장 위의 태그(body)가 기준이 됩니다.
+- `fixed` 
+`fixed` 역시 `absolute` 와 마찬가지로 요소가 문서의 일반적인 흐름에서 제거됩니다. 대신, 스크린의 뷰포트(viewport)를 기준으로 한 위치에서 배치됩니다. 즉, 스크롤되어도 움직이지 않는 고정된 자리를 갖게 됩니다.
+    
+    ```jsx
+    💡 뷰포트(viewport)란? 웹 페이지가 브라우저 화면상에서 실제로 표시되는 영역이다.
+    ```
+    
+- `sticky
+sticky` 는 요소가 HTML 문서안에서 `static` 과 같이 일반적인 흐름에 따라가다가 스크롤 위치가 임계점에 이르면 `fixed` 와 같이 박스를 화면에 고정할 수 있는 속성입니다.
+
+### 위치 속성
+
+`position` 속성이 배치하는 방법이라면 `top` `left` `bottom` `right` 속성은 요소를 원하는 곳으로 최종적으로 위치 시키는 속성이다. 이 속성은 `position: static;` 에서는 적용되지 않는다.
+
+- `top`
+- `left`
+- `bottom`
+- `right`
+
+### 관련 속성
+
+- `z-index`
+어느 객체가 앞으로 나오고, 뒤에 나올지 배치 순서를 결정하는 속성입니다.
+`z-index`는 `position` (`relative`, `absolute`, `fixed`)속성이 적용된 요소에서만 작동합니다.
