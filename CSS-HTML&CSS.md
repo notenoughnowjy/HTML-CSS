@@ -757,3 +757,102 @@ sticky` 는 요소가 HTML 문서안에서 `static` 과 같이 일반적인 흐�
 - `z-index`
 어느 객체가 앞으로 나오고, 뒤에 나올지 배치 순서를 결정하는 속성입니다.
 `z-index`는 `position` (`relative`, `absolute`, `fixed`)속성이 적용된 요소에서만 작동합니다.
+---
+
+## 2023.03.11
+
+### Background
+
+### `background-color`
+
+HTML 요소의 배경 색을 지정합니다.
+
+```html
+/* 키워드 값 */
+background-color: red;
+/* 16진수 값 */
+background-color: #bbff00;
+/* RGB 값 */
+background-color: rgb(255,255,128);
+/* 특별 키워드 값 */
+background-color: currentcolor;
+/* 전역 값 */
+background-color: inherit;
+```
+
+### `background-image`
+
+HTML요소에 배경 이미지를 한 개 또는 여러 개를 지정할 수 있습니다.
+
+```html
+background-image: url("../../media/examples/lizard.png");
+background-image: url("../../media/examples/lizard.png"),
+									url("../../media/examples/lizard.png");
+```
+
+### `background-repeat`
+
+배경 이미지의 반복 방법을 지정합니다. 가로축 및 세로축을 따라 반복할 수 있고, 아예 반복하지 않을 수도 있습니다.
+
+- `repeat` : 가로,세로 반복
+- `no-repeat` : 반복하지 않음
+- `repeat-x` : 가로 반복
+- `repeat-y` : 세로 반복
+
+### `background-position`
+
+배경 이미지의 초기 위치를 설정합니다.
+
+```html
+/* Keyword values */
+background-position: top;
+background-position: left;
+background-position: center;
+/* <percentage> values */
+background-position: 25% 75%;
+/* Edge offsets values */
+background-position: bottom 10px right 20px;
+```
+
+### `background-attachment`
+
+배경 이미지를 뷰포트 내에서 고정할지 말지를 지정하는 속성입니다.
+
+- `scroll` : 선택한 요소와 같이 움직입니다. 내용을 스크롤하면 배경 이미지는 스크롤되지 않습니다. (기본값)
+- `fixed` : 움직이지 않습니다.
+- `local` : 선택한 요소와 같이 움직입니다. 내용을 스크롤하면 배경 이미지도 스크롤됩니다.
+- `initial` : 기본값으로 설정합니다.
+- `inherit` : 부모 요소의 속성값을 상속받습니다.
+
+```html
+/* 키워드 값 */
+background-attachment: scroll;
+background-attachment: fixed;
+background-attachment: local;
+
+/* 전역 값 */
+background-attachment: inherit;
+background-attachment: initial;
+background-attachment: unset;
+
+```
+
+### `background`
+
+`background-image` `background-repeat` `background-position` `background-attachment` 속성을 한꺼번에 선언할 수 있습니다.
+
+```html
+background: url('images/bg.png') no-repeat top right fixed;
+```
+
+보통 이렇게 background 속성으로 많이 사용합니다.
+
+### `background-size`
+
+요소 배경 이미지의 크기를 설정합니다. 그대로 두거나, 늘리고 줄이거나, 공간에 맞출 수 있습니다.
+
+- `contain` - 이미지가 잘리거나 찌그러지지 않는 한도 내에서 제일 크게 설정
+- `cover` - 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정. 이미지의 가로세로비가 요소와 다르다면 이미지를 세로 또는 가로방향으로 잘라내어 빈 공간이 생기지 않도록 설정합니다. (많이 사용함)
+- `auto` - 배경 미지이의 원본 크기를 유지.
+- `<length>` - 원본 크기의 너비/높이를 주어진 값으로 늘리거나 줄임. 음수는 유효하지 않습니다.
+- `<percentage>` - 배경 위치 지정 영역의 지정된 백분율에 해당되는 크기로 이미지를 늘립니다.
