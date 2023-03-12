@@ -856,3 +856,88 @@ background: url('images/bg.png') no-repeat top right fixed;
 - `auto` - 배경 미지이의 원본 크기를 유지.
 - `<length>` - 원본 크기의 너비/높이를 주어진 값으로 늘리거나 줄임. 음수는 유효하지 않습니다.
 - `<percentage>` - 배경 위치 지정 영역의 지정된 백분율에 해당되는 크기로 이미지를 늘립니다.
+### 그라데이션 이란
+
+그라데이션은 두 가지 이상의 색상이 연걸되면서 자연스럽게 보여주는 것을 말합니다. 그라데이션은 크게 선형 그라데이션과 원형 그라데이션이 있습니다.
+
+### 선형 그라데이션
+
+linear-gradient() 함수는 두 개 이상의 색상이 직선을 따라 점진적으로 변화하는 것을 말합니다.
+
+- `to` 키워드를 사용하여 방향을 결정 할 수 있다.
+- `deg` 키워드를 사용하여 각도값을 지정할 수 있다.
+
+```html
+background: linear-gradient(#e66465, #9198e5);
+background: linear-gradient(to bottom, white, blue);
+background: linear-gradient(45deg, white, blue);
+background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+```
+
+### 원형 그라데이션
+
+- 타원형
+`radial-gradient()` 함수를 사용하여 타원형 그라데이션을 만들 수 있다.
+
+---
+
+## 2023.03.12
+
+### Pseudo Class&Element(고급 선택자)
+
+### 가상 클래스/요소
+
+### 가상 클래스(Pseudo class)
+
+가상 클래스(pseudo-class)는 선택하고자 하는 HTML 요소의 특별한 ‘상태(state)’를 명시할 때 사용합니다.
+
+- 문법
+`선택자:가상클래스이름 {속성: 속성값:}`
+- 예제
+
+```html
+a:hover{
+	color: orange;
+}
+input: focus{
+	color: red;
+}
+```
+
+- 대표적인 CSS 가상 클래스
+    - `:link` - 아직 방문하지 않은 요소를 나타냅니다. href 속성을 가진 <a> <area> <link> 중 방문하지 않은 모든 요소를 선택합니다.
+    - `:visited` - 사용자가 방문한 적이 있는 링크를 나타냅니다.
+    - `:active` - 사용자가 활성화한 요소(버튼 등)를 나타냅니다.
+    - `:hover` - 사용자의 마우스 포인터가 요소 위에 올라가 있으면 선택됩니다.
+    - `:focus` - 양식의 입력 칸 등 포커스를 받은 요소를 나타냅니다. 보통 사용자가 요소를 클릭 또는 탭하거나, 키보드 `Tab` 키로 선택했을 때 발동합니다.
+    - `:nth-child` - 형제 사이에서의 순서에 따라 요소를 선택합니다.
+    - `:not(selector)`-`not(selector)` 안에 포함된 요소를 제외시키겠다는 뜻입니다.
+
+```html
+💡대표적인 가상클래스를 사용할 때는 link -> visited -> hover -> active 순으로 선언하여 사용하길 권장합니다. 왜냐하면 순서가 달라지면 적용이 안될 수도 있습니다.
+```
+
+### 가상요소 (pseudo element)
+
+가상 요소(pseudo-element)는 해당 HTML 요소의 특정 부분만을 선택할 때 사용합니다.
+
+- 문법
+선택자::가상요소이름 {속성: 속성값;}
+- 예시
+
+```html
+/* 모든 p 요소의 첫 번째 줄 */
+p::first-line{
+	color: blue;
+	text-transform: uppercase;
+}
+```
+
+- 대표적인 CSS 가상 요소
+    - `::first-letter` - 텍스트의 첫 글자만을 선택합니다. 단, 블록 레벨 요소 (block-level-element)에만 사용할 수 있습니다.
+    - `::first-line` - 텍스트의 첫 라인만을 선택합니다. 단, 블록 레벨 요소(blocked-level-element)에만 사용할 수 있습니다.
+    - `::before` - 특정 요소의 내용(content) 부분 바로 앞에 다른 요소를 삽입할 때 사용합니다.
+    - `::after` - 특정 요소의 내용(content) 부분 바로 뒤에 다른 요소를 삽입할 때 사용합니다.
+    - `::selection` - 해당 요소에서 사용자가 선택한 부분만을 선택할 때 사용합니다.
+
+[MDN Web Docs](https://developer.mozilla.org/ko/)
