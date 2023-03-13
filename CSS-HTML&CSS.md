@@ -941,3 +941,57 @@ p::first-line{
     - `::selection` - 해당 요소에서 사용자가 선택한 부분만을 선택할 때 사용합니다.
 
 [MDN Web Docs](https://developer.mozilla.org/ko/)
+---
+
+## 2023.03.13
+
+### Transform, Transition
+
+### transform
+
+`transform` 속성은 HTML 요소를 회전, 크기, 조절, 기울이기, 이동 효과를 나타낼 때 사용합니다. 사용법은 `transform` 속성 값으로 특수한 함수를 넣어주면 됩니다.
+
+```dart
+/* x축(가로)으로 20px 이동 */
+transform: translateX(20px);
+
+/* y축(세로)으로 40px 이동 */
+transform: translaterY(40px);
+
+/* x축(가로)으로 20px, y축(세로)으로 40px 이동 */
+transform: translate(20px, 40px);
+```
+
+> 주의사항
+> 
+
+`transform` 을 사용하려면 해당 요소의 `display` 속성이 `block` 또는 `inline-block`이어야 합니다. 
+
+### transform 함수
+
+- `translate(tx, y)`
+지정한 크기만큼 x축, y축으로 이동합니다.
+- `translate(tx)`
+지정한 크기만큼 x축으로 이동합니다.
+- `translate(ty)`
+지정한 크기만큼 y축으로 이동합니다.
+- `scale(sx, sy)`
+지정한 크기만큼 x축과 y축으로 확대-축소합니다.
+- `scale(sx)`
+지정한 크기만큼 x축으로 확대-축소합니다.
+- `scale(sy)`
+지정한 크기만큼 y축으로 확대-축소합니다.
+- `rotate(각도)`
+지정한 각도만큼 회전합니다.(`+` 시계방향, `-` 시계 반대 방향)
+- `rotateX(각도)`
+x축을 기준으로 회전합니다. 이때 입체감 있게 표현하려면 `perspective` 속성을 부모 요소에 적용해야 합니다.
+- `rotateY(각도)`
+y축을 기준으로 회전합니다. 이때 입체감 있게 표현하려면 `perspective` 속성을 부모 요소에 적용해야 합니다.
+- `rotateZ(각도)`
+z축을 기준으로 회전합니다. 이때 입체감 있게 표현하려면 `perspective` 속성을 부모 요소에 적용해야 합니다.
+- `skew(ax, ay)`
+지정한 각도만큼 x축과 y축으로 왜곡합니다.
+- `skew(ax)`
+지정한 각도만큼 x축으로 왜곡합니다.
+- `skew(ay)`
+지정한 크기만큼 y축으로 왜곡합니다.
