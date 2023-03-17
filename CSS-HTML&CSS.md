@@ -995,3 +995,39 @@ z축을 기준으로 회전합니다. 이때 입체감 있게 표현하려면 `p
 지정한 각도만큼 x축으로 왜곡합니다. 
 - `skew(ay)`
 지정한 크기만큼 y축으로 왜곡합니다. 
+---
+## 2023.03.17
+
+### Transition
+
+transition의 사전적 의미는 “전환”이라는 뜻 입니다. CSS에서서 transition은 속성 값이 변할 때 더욱더 부드럽게 전환할 수 있도록 도와준다 라고 보시면 될 것 같습니다.
+
+예를들면 100x100 사과 이미지에 마우스를 올려놓으면 사과 이미지를 200x200으로 변환 한다고 했을 때 한번에 딱! 변하는 것보다 서서히~ 스무스하게~ 변하는게 더 아름다워 보일 것 입니다. Transition은 이러한 작업을 도와줍니다.
+
+### Transition 속성
+
+- `transition-property`
+어떤 속성에 트랜지션 효과를 줄 것인지 지정합니다.
+    - `transiting-property: <속성1>, <속성2>;` 와 같이 지정할 수 있습니다.
+    - `all` : 모든 속성을 지정합니다. (all은 생략 가능합니다.)
+    - `none` : 아무것도 지정하지 않습니다.
+- `transition-duration` 
+트랜지션 효과를 몇 초 동안 실행할 것이지 지정합니다.
+- `transition-delay`
+지정한 초 만큼 기다렸다가 실행할 때 사용합니다.
+- `transition-timing-function`
+트랜지션이 시작하면서 끝날때의 타이밍! 즉 속도를 지정하는 것입니다.
+    - `linear` : 트랜지션의 시작과 끝의 속도가 일정함
+    - `ease-in` : 천천히 시작했다가 완료될 때 속도가 증가합니다.
+    - `ease-out` : 빨리 시작했다가 완료될 때 속도가 낮아집니다.
+- `transition`
+`transition` 단축속성으로 위 속성을 한꺼번에 표기할 수 있습니다.
+
+```dart
+transition: 2s;
+/* 단축 속성으로 위 속성을 한꺼번에 표기할 수 있다. */
+transition: 2s 1s ease-out;
+/* 첫번째 2s는 duration을, 두번째 1s는 지연시간을 나타낸다. */
+```
+
+[transition - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
